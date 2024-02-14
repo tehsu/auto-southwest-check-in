@@ -1,4 +1,4 @@
-FROM python:3.12-alpine
+FROM python:3.11.8-alpine3.18
 
 WORKDIR /app
 
@@ -6,7 +6,7 @@ WORKDIR /app
 # this Docker image already downloads a compatible chromedriver
 ENV AUTO_SOUTHWEST_CHECK_IN_DOCKER 1
 
-RUN apk add --update --no-cache chromium=112.0.5615.165-r0 chromium-chromedriver=112.0.5615.165-r0
+RUN apk add --update --no-cache chromium=119.0.6045.159-r0 chromium-chromedriver=119.0.6045.159-r0
 
 COPY requirements.txt requirements.txt
 RUN pip3 install --upgrade pip && pip3 install --no-cache-dir -r requirements.txt
