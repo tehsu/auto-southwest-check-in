@@ -6,7 +6,7 @@ WORKDIR /app
 # this Docker image already downloads a compatible chromedriver
 ENV AUTO_SOUTHWEST_CHECK_IN_DOCKER 1
 
-RUN apk add --update --no-cache chromium chromium-chromedriver
+RUN apk add --update --no-cache chromium=112.0.5615.165-r0 chromium-chromedriver=112.0.5615.165-r0
 
 COPY requirements.txt requirements.txt
 RUN pip3 install --upgrade pip && pip3 install --no-cache-dir -r requirements.txt
